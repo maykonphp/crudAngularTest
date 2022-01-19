@@ -1,0 +1,50 @@
+<div class="container">
+<h1 class="mt-4 mb-4">Cadastrar Produtos</h1>
+
+
+
+<form >
+
+    <div class="card shadow p-3">
+
+ <div class="row ">
+     
+        <div class="col-md-12 mt-4">
+            <div class="form-group">
+                <label for="nome">Nome do Produto</label>
+                <input type="text"  class="form-control" name="nomeProduto" [(ngModel)]="produto.nome"         placeholder="Digite o nome do produto">
+            </div>
+
+        </div>  
+ 
+        <div class="col-md-6 mt-4">
+            <div class="form-group">
+                <label for="validade">Validade do Produto</label>
+                <input type="date" class="form-control" name="validadeProduto" [(ngModel)]="produto.validade"  placeholder="Validade do produto">
+            </div>
+
+        </div>  
+ 
+        <div class="col-md-6 mt-4">
+            <div class="form-group">
+                <label for="preco">Preço do Produto</label>
+                <input type="number" class="form-control" name="precoProduto" [(ngModel)]="produto.preco"   placeholder="Digite o nome do produto">
+            </div>
+
+        </div>  
+     
+ </div>   
+
+<div class="row">
+   <div class="col">
+       <button  type="button" class="btn btn-light float-left mt-3" [routerLink]="['/produtos']">Voltar</button>
+       <button  type="button" class="btn btn-success float-end mt-3" (click)="cheiroDeVeia()">Salvar</button>
+   </div> 
+</div>
+</div>
+
+
+
+</form>
+
+</div>

@@ -1,0 +1,51 @@
+
+
+ <div class="container mt-5">
+  <div class="card">
+ <h1 class="my-3  mt-6">Lista de Produtos</h1>
+ <button type="button" class="btn btn-success btn-sm ml-2 mt-2 float-right" [routerLink]="['/cadastrar']" >Cadastrar</button>
+  </div>
+
+ <div class="card mt-5">
+
+    <table class="table table-responsive table-striped">
+<thead>
+     <tr>
+         <th>#</th>
+         <th>Nome</th>
+         <th>Validade</th>
+         <th>Valor</th>
+         <th>Ações</th>
+
+     </tr>
+</thead>
+ <tbody>
+    <tr *ngFor="let cursos of listaProdutos">
+        <td>{{cursos.id }}</td>
+        <td>{{cursos.nome | uppercase }}</td>
+        <td>{{cursos.validade | date: 'dd/MM/yyyy'}} </td>
+        <td>{{cursos.preco | currency: 'BRL'}}</td>
+        <td>
+            <button class="btn btn-warning btn-sm" routerLink="/update/{{cursos.id}}" >Alterar</button>
+        </td>
+        <td>
+            <button class="btn btn-danger btn-sm" [swal]="{
+              title: 'Atenção !',
+              text: 'Deseja realmente excluir esse produto '+'cursos.nome '+'permanentemente do banco de dados ',
+              showDenyButton:true,
+              denyButtonText:'Não',
+              confirmButtonText:'Sim , excluir',
+              icon: 'warning'
+            }"
+             (confirm)="deleteOk(cursos)"
+
+            >Deletar</button>
+        </td>
+
+    </tr>
+ </tbody>
+    </table>
+
+
+</div>
+</div>
