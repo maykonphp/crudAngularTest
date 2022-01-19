@@ -1,4 +1,5 @@
 import { Injectable} from '@angular/core';
+import { environment } from './../../../../../pipes/src/environments/environment';
 
 import { EMPTY,Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
@@ -16,7 +17,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class ProdutosService {
 
-   private url: string = 'http://localhost:3000/produtos';
+   private url: string = environment.URL;
 
 
   constructor(
